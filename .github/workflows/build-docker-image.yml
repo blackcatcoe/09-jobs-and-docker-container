@@ -1,0 +1,14 @@
+name: Build Docker Image
+on:
+  push:
+    branches:
+      - master
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build docker image
+              run: |
+                docker build -t ${{ github.repository }} .
+                docker images
+
