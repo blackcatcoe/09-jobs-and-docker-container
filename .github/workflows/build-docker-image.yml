@@ -8,7 +8,9 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: build docker image
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Build Docker Image
               run: |
                 docker build -t ${{ github.repository }} .
                 docker images
